@@ -6,23 +6,6 @@ pd 5
 ---------------------
 Scrabble
 
-
-Suggested usage: 
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete these instructions once all teammates understand usage.
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-
-
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
@@ -65,3 +48,34 @@ Brandon :: Created Player.java
 Brooke :: Created Woo.java
 Lisa :: Flow chart, added cs1 file, started making 15x15 array
 ==============================================================
+
+
+2017-01-13
+--------------------------------------------------------------
+Brandon :: 
+Brooke ::
+Lisa :: 
+==============================================================
+
+2017-01-14
+--------------------------------------------------------------
+Brandon :: 
+Brooke ::
+Lisa :: 
+==============================================================
+
+2017-01-15
+--------------------------------------------------------------
+Brandon :: 
+Brooke ::
+Lisa :: 
+==============================================================
+
+2017-01-16
+--------------------------------------------------------------
+Brandon :: 
+Brooke ::
+Lisa :: 
+==============================================================
+
+
