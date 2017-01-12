@@ -7,3 +7,7 @@ To do list
 5)Check the surroundings of the letter to make sure no new invalid words are created while also checking that there isn't already a letter in place
 6)Calculate points while doing number 4
 7)Check if word is valid (Dictionary)
+
+Todo for MVP
+1)ArrayList<String> board created and able to accept inputs
+2)Dictionary implemented
