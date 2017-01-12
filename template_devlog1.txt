@@ -63,5 +63,5 @@ tales of wisdom gained...
 --------------------------------------------------------------
 Brandon :: Created Player.java
 Brooke :: Created Woo.java
-Lisa :: Flow chart
+Lisa :: Flow chart, added cs1 file, started making 15x15 array
 ==============================================================
