@@ -10,12 +10,12 @@ Scrabble
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+* Created a board and allowed users to input letters on the board
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+* Word has to stay on the board and contain a letter previously placed
+* Word has to be valid
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,11 +50,10 @@ Lisa :: Flow chart, added cs1 file, started making 15x15 array
 ==============================================================
 
 
-2017-01-13
+2017-01-12
 --------------------------------------------------------------
-Brandon :: 
-Brooke ::
-Lisa :: 
+Brandon :: Worked on Dictionary
+Brooke, Lisa :: Created the board and allowed users to input on the board
 ==============================================================
 
 2017-01-14
