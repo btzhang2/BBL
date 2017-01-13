@@ -9,5 +9,5 @@ To do list
 7)Check if word is valid (Dictionary)
 
 Todo for MVP
-1)ArrayList<String> board created and able to accept inputs
+1)A 15x15 board created and able to input words
 2)Dictionary implemented
