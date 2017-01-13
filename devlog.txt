@@ -11,11 +11,12 @@ Scrabble
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Created a board and allowed users to input letters on the board
+* Dictionary -- word is checked for validity
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Word has to stay on the board and contain a letter previously placed
-* Word has to be valid
+* Players and their randomly generated tiles
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
