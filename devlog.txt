@@ -25,7 +25,7 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+we changed the variables and methods in Woo.java to static because they don’t change. As Player.java extends Woo.java, we don’t want a board to be created for every single player.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,6 +61,7 @@ Brooke, Lisa :: Created the board and allowed users to input on the board
 2017-01-15
 --------------------------------------------------------------
 Brooke :: Updated board, Accounted for some potential errors in Woo.java, Implemented words being built off other words
+Brandon :: Changed Woo.java to static. Shifted input() to Player.java. Implemented word and letter checker. Uploaded separate file to preserve changes that Brooke made. Will combine the code after organizing.
 ==============================================================
 
 2017-01-15
