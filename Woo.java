@@ -192,7 +192,7 @@ public class Woo{
 		    int tempRow2 = row;
 		    if ((!scrabbleBoard[row-1][col].equals("| ")) || (!scrabbleBoard[row-1][col].equals("|" + col))){
 			while (!(scrabbleBoard[(tempRow1)-1][col].equals("| ") || (scrabbleBoard[(tempRow1)-1][col].equals("|" + col)))){
-			    localWord = scrabbleBoard[(tempRow1)-1][col].substring(1) + word;
+			    localWord = scrabbleBoard[(tempRow1)-1][col].substring(1) + localWord;
 			    (tempRow1)-=1;
 			}
 			localWord+=scrabbleBoard[row][col].substring(1);
@@ -222,12 +222,12 @@ public class Woo{
 		    int tempCol2 = col;
 		    if ((!scrabbleBoard[row][col-1].equals("| ")) || (!scrabbleBoard[row][col-1].equals("|" + row))){
 			while (!(scrabbleBoard[row][(tempCol1)-1].equals("| ") || (scrabbleBoard[row][(tempCol1)-1].equals("|" + row)))){
-			    localWord = scrabbleBoard[row][(tempCol1)-1].substring(1) + word;
+			    localWord = scrabbleBoard[row][(tempCol1)-1].substring(1) + localWord;
 			    (tempCol1)-=1;
 			}
 			localWord+=scrabbleBoard[row][col].substring(1);
 			if (!scrabbleBoard[row][col+1].equals("| ")){
-			    while (!scrabbleBoard[row][(tempCol2)-1].equals("| ")){
+			    while (!scrabbleBoard[row][(tempCol2)+1].equals("| ")){
 				    localWord+=scrabbleBoard[row][(tempCol2)+1].substring(1);
 				    (tempCol2)+=1;
 			    }
