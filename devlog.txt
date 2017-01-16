@@ -57,11 +57,9 @@ Brandon :: Worked on Dictionary
 Brooke, Lisa :: Created the board and allowed users to input on the board
 ==============================================================
 
-2017-01-14
+2017-01-15
 --------------------------------------------------------------
-Brandon :: 
-Brooke ::
-Lisa :: 
+Brooke :: Accounted for some potential errors in Woo.java
 ==============================================================
 
 2017-01-15
