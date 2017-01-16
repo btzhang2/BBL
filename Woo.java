@@ -12,12 +12,16 @@ public class Woo{
 
     public void populate(){
 	scrabbleBoard = new String[16][16];
+
+	//show row numbers, for row numbers 10+, the ones digis of the tens are shown
 	for (int r = 0; r < 10; r++) {
 	    scrabbleBoard[r][0] = Integer.toString(r);
 	}
 	for (int r = 10; r < 16; r++) {
 	    scrabbleBoard[r][0] = Integer.toString(r).substring(1);
 	}
+
+	//show col numbers, for col numbers 10+, the ones digis of the tens are shown	
 	for (int c = 0; c < 10; c++) {
 	    scrabbleBoard[0][c] = Integer.toString(c) + "|";
 	}
@@ -41,18 +45,27 @@ public class Woo{
 	}
     }
 
+    //for the first word that is inputted
     public void firstWord() {
+
+	//allow user to build from a certain direction
 	System.out.println("Please type 'r' to build your word right to left or 'u' to build your word up to down");
         direction = Keyboard.readWord();
+
+	
 	System.out.println("Please type the word you want to input");
         word = Keyboard.readWord();
 	word = word.toLowerCase();
-        wordLength = word.length();
+        wordLength = word.length(); //calculate the length of the word
 	int wordIndex = 0;
-        validWord = Dictionary.wordChecker(word);
+        validWord = Dictionary.wordChecker(word); //check if word is valid
+
+	//place the letter of the first word at the center of the board (8,8)
 	if (validWord) {
 	    row = 8;
 	    col = 8;
+
+	    //place each letter in the slots (from right to left or up to down)
 	    if (direction.equals("r")){
 		while (wordIndex < wordLength){
 		    scrabbleBoard[row][col] = "|" + word.substring(wordIndex, wordIndex+1);
@@ -67,40 +80,51 @@ public class Woo{
 		    wordIndex+=1;
 		}
 	    }
+
+	    //check if direction user inputs is valid
 	    else {
 		System.out.println("Sorry, this direction is not valid.");
 		firstWord();
 	    }
 	}
+
+	//user inputs invalid word
 	else{
 	    System.out.println("Sorry, the word you input is not valid. Please type another word. \n ");
 	    firstWord();
 	}
     }
-    
+
+    //for every word after the first word that is input
     public void input(){
+
+	//check if input for row is valid.
 	System.out.println("Please input the row index.");
         row = Keyboard.readInt();
 	while (row > 15 || row == 0) {
 	    System.out.println("Sorry, this row index is not valid. Please input the row index.");
 	    row = Keyboard.readInt();
 	}
-	
+
+	//check if input for col is valid.
 	System.out.println("Please input the column index.");
         col = Keyboard.readInt();
 	while (col > 15 || col == 0) {
 	    System.out.println("Sorry, this column index is not valid. Please input the column index.");
 	    col = Keyboard.readInt();
 	}
-	
+
+	// direction word is being built
         System.out.println("Please type 'r' to build your word right to left or 'u' to build your word up to down");
         direction = Keyboard.readWord();
 
+	// figure out the word the user wants to place on the board and the length of the word
 	System.out.println("Please type the word you want to input");
         word = Keyboard.readWord();
 	word = word.toLowerCase();
         wordLength = word.length();
 
+	// check if word is long enough to be placed on the board
 	while (direction.equals("r") && (wordLength + col) > 16) {
 	    System.out.println("Sorry, this word does not fit on the board. Please type the word you want to input.");
 	    word = Keyboard.readWord();
@@ -114,6 +138,7 @@ public class Woo{
 	    wordLength = word.length();
 	}
 
+	//check if the letters in the word you input can be built off of an exisiting word on the board
 	if (direction.equals("r")) {
 	    int numExistingLs = 0;
 	    for (int i = 0; i < wordLength; i++) {
@@ -132,6 +157,8 @@ public class Woo{
 		return;
 	    }
 	}
+
+	//check if the letters in the word you input can be built off of an exisiting word on the board
 	else if (direction.equals("u")) {
 	    int numExistingLs = 0;
 	    for (int i = 0; i < wordLength; i++) {
@@ -155,6 +182,7 @@ public class Woo{
 	int wordIndex = 0;
         validWord = Dictionary.wordChecker(word);
 
+	//place letters into the board
 	if (validWord) {
 	    if (direction.equals("r")){
 		while (wordIndex < wordLength){
