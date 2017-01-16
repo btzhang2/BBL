@@ -187,6 +187,8 @@ public class Woo{
 	    if (direction.equals("r")){
 		while (wordIndex < wordLength){
 		    scrabbleBoard[row][col] = "|" + word.substring(wordIndex, wordIndex+1);
+
+		    //check if local words are valid as letetr are inputted
 		    String localWord = "";
 		    int tempRow1 = row;
 		    int tempRow2 = row;
@@ -217,6 +219,8 @@ public class Woo{
 	    else if (direction.equals("u")){
 		while (wordIndex < wordLength){
 		    scrabbleBoard[row][col] = "|" + word.substring(wordIndex, wordIndex+1);
+
+		    //check if local words are valid as letters are added.
 		    String localWord = "";
 		    int tempCol1 = col;
 		    int tempCol2 = col;
