@@ -12,15 +12,16 @@ OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Created a board and allowed users to input letters on the board
 * Dictionary -- word is checked for validity
+* Words now have to be built off existing words
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Word has to stay on the board and contain a letter previously placed
 * Players and their randomly generated tiles
+* Check the words around the new word for valid words
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+* How to implement a dictionary
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,7 +60,7 @@ Brooke, Lisa :: Created the board and allowed users to input on the board
 
 2017-01-15
 --------------------------------------------------------------
-Brooke :: Accounted for some potential errors in Woo.java
+Brooke :: Updated board, Accounted for some potential errors in Woo.java, Implemented words being built off other words
 ==============================================================
 
 2017-01-15
