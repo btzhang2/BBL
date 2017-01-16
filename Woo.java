@@ -107,6 +107,38 @@ public class Woo{
 	    word = word.toLowerCase();
 	    wordLength = word.length();
 	}
+	if (direction.equals("r")) {
+	    int numExistingLs = 0;
+	    for (int i = 0; i < wordLength; i++) {
+		if (!scrabbleBoard[row][col + i].equals("| ")) {
+		    numExistingLs += 1;
+		    if (!scrabbleBoard[row][col + i].substring(1).equals(word.substring(i,i+1))) {
+			System.out.println("Sorry, that play is invalid.");
+			input();
+		    }
+		}
+	    }
+	    if (numExistingLs == 0) {
+		System.out.println("Sorry, that play is invalid.");
+		input();
+	    }
+	}
+	else if (direction.equals("u")) {
+	    int numExistingLs = 0;
+	    for (int i = 0; i < wordLength; i++) {
+		if (!scrabbleBoard[row + i][col].equals("| ")) {
+		    numExistingLs += 1;
+		    if (!scrabbleBoard[row + i][col].substring(1).equals(word.substring(i,i+1))) {
+			System.out.println("Sorry, that play is invalid.");
+			input();
+		    }
+		}
+	    }
+	    if (numExistingLs == 0) {
+		System.out.println("Sorry, that play is invalid.");
+		input();
+	    }
+	}
 	int wordIndex = 0;
 	boolean validWord = Dictionary.wordChecker(word);
 	if (validWord) {
