@@ -85,18 +85,22 @@ public class Woo{
 	    System.out.println("Sorry, this row index is not valid. Please input the row index.");
 	    row = Keyboard.readInt();
 	}
+	
 	System.out.println("Please input the column index.");
         col = Keyboard.readInt();
 	while (col > 15 || col == 0) {
 	    System.out.println("Sorry, this column index is not valid. Please input the column index.");
 	    col = Keyboard.readInt();
 	}
+	
         System.out.println("Please type 'r' to build your word right to left or 'u' to build your word up to down");
         direction = Keyboard.readWord();
+
 	System.out.println("Please type the word you want to input");
         word = Keyboard.readWord();
 	word = word.toLowerCase();
         wordLength = word.length();
+
 	while (direction.equals("r") && (wordLength + col) > 16) {
 	    System.out.println("Sorry, this word does not fit on the board. Please type the word you want to input.");
 	    word = Keyboard.readWord();
@@ -109,6 +113,7 @@ public class Woo{
 	    word = word.toLowerCase();
 	    wordLength = word.length();
 	}
+
 	if (direction.equals("r")) {
 	    int numExistingLs = 0;
 	    for (int i = 0; i < wordLength; i++) {
@@ -117,12 +122,14 @@ public class Woo{
 		    if (!scrabbleBoard[row][col + i].substring(1).equals(word.substring(i,i+1))) {
 			System.out.println("Sorry, that play is invalid.");
 			input();
+			return;
 		    }
 		}
 	    }
 	    if (numExistingLs == 0) {
 		System.out.println("Sorry, that play is invalid.");
 		input();
+		return;
 	    }
 	}
 	else if (direction.equals("u")) {
@@ -130,19 +137,24 @@ public class Woo{
 	    for (int i = 0; i < wordLength; i++) {
 		if (!scrabbleBoard[row + i][col].equals("| ")) {
 		    numExistingLs += 1;
+
 		    if (!scrabbleBoard[row + i][col].substring(1).equals(word.substring(i,i+1))) {
 			System.out.println("Sorry, that play is invalid.");
 			input();
+			return;
 		    }
 		}
 	    }
 	    if (numExistingLs == 0) {
 		System.out.println("Sorry, that play is invalid.");
 		input();
+		return;
 	    }
 	}
+	
 	int wordIndex = 0;
         validWord = Dictionary.wordChecker(word);
+
 	if (validWord) {
 	    if (direction.equals("r")){
 		while (wordIndex < wordLength){
