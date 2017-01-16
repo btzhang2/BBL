@@ -187,15 +187,61 @@ public class Woo{
 	    if (direction.equals("r")){
 		while (wordIndex < wordLength){
 		    scrabbleBoard[row][col] = "|" + word.substring(wordIndex, wordIndex+1);
-		    col+=1;
-		    wordIndex+=1;
+		    String localWord = "";
+		    int tempRow1 = row;
+		    int tempRow2 = row;
+		    if ((!scrabbleBoard[row-1][col].equals("| ")) || (!scrabbleBoard[row-1][col].equals("|" + col))){
+			while (!(scrabbleBoard[(tempRow1)-1][col].equals("| ") || (scrabbleBoard[(tempRow1)-1][col].equals("|" + col)))){
+			    localWord = scrabbleBoard[(tempRow1)-1][col].substring(1) + word;
+			    (tempRow1)-=1;
+			}
+			localWord+=scrabbleBoard[row][col].substring(1);
+			if(!scrabbleBoard[row+1][col].equals("| ")){
+			    while (!scrabbleBoard[(tempRow2)+1][col].equals("| ")){
+				localWord+= scrabbleBoard[(tempRow2)+1][col].substring(1);
+				(tempRow2)+=1;
+			    }
+			}
+		    }
+		    if (Dictionary.wordChecker(localWord)){
+			col+=1;
+			wordIndex+=1;
+		    }
+		    else{
+			System.out.println("Sorry, this word can not be placed here because doing so would create new words that are invalid");
+			input();
+		    }
 		}
+
 	    }
 	    else if (direction.equals("u")){
 		while (wordIndex < wordLength){
 		    scrabbleBoard[row][col] = "|" + word.substring(wordIndex, wordIndex+1);
-		    row+=1;
-		    wordIndex+=1;
+		    String localWord = "";
+		    int tempCol1 = col;
+		    int tempCol2 = col;
+		    if ((!scrabbleBoard[row][col-1].equals("| ")) || (!scrabbleBoard[row][col-1].equals("|" + row))){
+			while (!(scrabbleBoard[row][(tempCol1)-1].equals("| ") || (scrabbleBoard[row][(tempCol1)-1].equals("|" + row)))){
+			    localWord = scrabbleBoard[row][(tempCol1)-1].substring(1) + word;
+			    (tempCol1)-=1;
+			}
+			localWord+=scrabbleBoard[row][col].substring(1);
+			if (!scrabbleBoard[row][col+1].equals("| ")){
+			    while (!scrabbleBoard[row][(tempCol2)-1].equals("| ")){
+				    localWord+=scrabbleBoard[row][(tempCol2)+1].substring(1);
+				    (tempCol2)+=1;
+			    }
+			}
+		    }
+
+		    if (Dictionary.wordChecker(localWord)){
+			row+=1;
+			wordIndex+=1;
+		    }
+		    else{
+			System.out.println("Sorry, this word can not be placed here because doing so would create new words that are invalid");
+			input();
+		    }			
 		}
 	    }
 	    else {
@@ -208,7 +254,8 @@ public class Woo{
 	    input();
 	}
     }
-    
+
+
     
     public static void main (String[] args){
 	Woo scrabble = new Woo();
