@@ -7,6 +7,8 @@ To do list
 5)Check the surroundings of the letter to make sure no new invalid words are created while also checking that there isn't already a letter in place
 6)Calculate points while doing number 4
 7)Check if word is valid (Dictionary)
+8)Extend words on the board without any existing letters in the word
+9)Letter already on the board does not have to be in your letter bank
 
 Todo for MVP
 1)A 15x15 board created and able to input words
