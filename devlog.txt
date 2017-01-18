@@ -27,11 +27,11 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed the variables and methods in Woo.java to static because they don’t change. As Player.java extends Woo.java, we don’t want a board to be created for every single player.
+* we changed the variables and methods in Woo.java to static because they don’t change. As Player.java extends Woo.java, we don’t want a board to be created for every single player.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
+* communicate
 ||||||||||||||||||||||||||||||||||||||||||
 
 
@@ -66,11 +66,15 @@ Brooke :: Updated board, Accounted for some potential errors in Woo.java, Implem
 Brandon :: Changed Woo.java to static. Shifted input() to Player.java. Implemented word and letter checker. Uploaded separate file to preserve changes that Brooke made. Will combine the code after organizing.
 ==============================================================
 
+2017-01-16
+--------------------------------------------------------------
+Lisa :: Added a feature to validate multiple new words created when a word is put down
+==============================================================
+
 2017-01-17
 --------------------------------------------------------------
 Brandon :: Removed static variables
-Brooke ::
-Lisa :: 
+Brooke, Lisa, Brandon :: Reorganized Woo and Player
 ==============================================================
 
 2017-01-18
