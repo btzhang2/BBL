@@ -130,29 +130,7 @@ public class Player extends Woo{
 	}
 	draw();
     }
-
-    //helper methods to check neighboring words are valid
-    
-    public boolean getOrCheckAboveOrBelow (int row, int col){
-	return scrabbleBoard[row][col].equals("| ") || scrabbleBoard[row][col].equals("|" + col);
-    }
-
-    public boolean getOrCheckRightOrLeft(int row, int col){
-	return scrabbleBoard[row][col].equals("| ") || scrabbleBoard[row][col].equals("|" + row);
-    }
-    
-    public String addUDRLLetter1(int row, int col, String localWord){
-	return scrabbleBoard[row][col].substring(1) + localWord;
-    }
-
-    public String addUDRLLetter2(int row, int col){
-	return scrabbleBoard[row][col].substring(1);
-    }
-
-    public String addLetter(int row, int col){
-	return scrabbleBoard[row][col].substring(1);
-    }
-    
+   
     //for every word after the first word that is input
     public void input(){
 	System.out.println(currentPieces);
@@ -256,7 +234,7 @@ public class Player extends Woo{
 				localWord = addUDRLLetter1((tempRow1)-1, col, localWord);
 				(tempRow1)-=1;
 			}
-			localWord+= addLetter(row, col);
+			localWord+= addLetter1(row, col);
 			if(!getOrCheckAboveOrBelow(row+1, col)){
 			    while (!getOrCheckAboveOrBelow((tempRow2)+1, col)){
 				localWord+= addUDRLLetter2((tempRow2)+1, col);
@@ -289,7 +267,7 @@ public class Player extends Woo{
 			    localWord = addUDRLLetter1(row, (tempCol1)-1, localWord);
 			    (tempCol1)-=1;
 			}
-			localWord+= addLetter(row, col);
+			localWord+= addLetter1(row, col);
 			if (!getOrCheckRightOrLeft (row, col+1)){
 			while (!getOrCheckRightOrLeft(row, (tempCol2)+1)){
 			    localWord+= addUDRLLetter2(row, (tempCol2)+1);
