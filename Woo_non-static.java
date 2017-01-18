@@ -92,49 +92,26 @@ public class Woo{
 	return scrabbleBoard[row + i][col].substring(1).equals(word.substring(i,i+1));
     }
 
-    public boolean check3(int row, int col){
-	return scrabbleBoard[row-1][col].equals("| ") || scrabbleBoard[row-1][col].equals("|" + col);
+    public boolean getOrCheckAboveOrBelow (int row, int col){
+	return scrabbleBoard[row][col].equals("| ") || scrabbleBoard[row][col].equals("|" + col);
     }
 
-    public boolean check4(int tempRow1, int col){
-	return scrabbleBoard[(tempRow1)-1][col].equals("| ") || scrabbleBoard[(tempRow1)-1][col].equals("|" + col);
-    }
-
-    public boolean check5(int row, int col){
-	return scrabbleBoard[row][col-1].equals("| ") || scrabbleBoard[row][col-1].equals("|" + row);
-    }
-
-    public boolean check6(int row, int tempCol1){
-	return scrabbleBoard[row][(tempCol1)-1].equals("| ") || scrabbleBoard[row][(tempCol1)-1].equals("|" + row);
-    }
-
-    public boolean check7(int row, int col){
-	return scrabbleBoard[row][col+1].equals("| ");
-    }
-
-    public boolean check8(int row, int tempCol2){
-        return scrabbleBoard[row][(tempCol2)+1].equals("| ");
+    public boolean getOrCheckRightOrLeft(int row, int col){
+	return scrabbleBoard[row][col].equals("| ") || scrabbleBoard[row][col].equals("|" + row);
     }
     
-    public String add1(int tempRow1, int col, String localWord){
-	return scrabbleBoard[(tempRow1)-1][col].substring(1) + localWord;
+    public String addUDRLLetter1(int row, int col, String localWord){
+	return scrabbleBoard[row][col].substring(1) + localWord;
     }
 
-    public String add2(int tempRow2, int col){
-	return scrabbleBoard[(tempRow2)+1][col].substring(1);
-    }
-
-    public String add3(int row, int col){
+    public String addUDRLLetter2(int row, int col){
 	return scrabbleBoard[row][col].substring(1);
     }
 
-    public String add4(int row, int tempCol1, String localWord){
-	return scrabbleBoard[row][(tempCol1)-1].substring(1) + localWord;
-    }
-
-    public String add5(int row, int tempCol2){
-	return scrabbleBoard[row][(tempCol2)+1].substring(1);
-    }
+    public String addLetter(int row, int col){
+	return scrabbleBoard[row][col].substring(1);
+    }  
+    
     public static void main (String[] args){
 	Woo board = new Woo();
 	

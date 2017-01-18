@@ -102,6 +102,28 @@ public class Player extends Woo{
 	}
 	draw();
     }
+
+    //helper methods to check neighboring words are valid
+    
+    public boolean getOrCheckAboveOrBelow (int row, int col){
+	return scrabbleBoard[row][col].equals("| ") || scrabbleBoard[row][col].equals("|" + col);
+    }
+
+    public boolean getOrCheckRightOrLeft(int row, int col){
+	return scrabbleBoard[row][col].equals("| ") || scrabbleBoard[row][col].equals("|" + row);
+    }
+    
+    public String addUDRLLetter1(int row, int col, String localWord){
+	return scrabbleBoard[row][col].substring(1) + localWord;
+    }
+
+    public String addUDRLLetter2(int row, int col){
+	return scrabbleBoard[row][col].substring(1);
+    }
+
+    public String addLetter(int row, int col){
+	return scrabbleBoard[row][col].substring(1);
+    }
     
     //for every word after the first word that is input
     public void input(){
@@ -201,15 +223,15 @@ public class Player extends Woo{
 		    String localWord = "";
 		    int tempRow1 = row;
 		    int tempRow2 = row;
-		    if ((!scrabbleBoard[row-1][col].equals("| ")) || (!scrabbleBoard[row-1][col].equals("|" + col))){
-			while (!(scrabbleBoard[(tempRow1)-1][col].equals("| ") || (scrabbleBoard[(tempRow1)-1][col].equals("|" + col)))){
-			    localWord = scrabbleBoard[(tempRow1)-1][col].substring(1) + localWord;
-			    (tempRow1)-=1;
+		    if (!getOrCheckAboveOrBelow(row-1, col)){
+			    while (!getOrCheckAboveOrBelow((tempRow1)-1, col)){
+				localWord = addUDRLLetter1((tempRow1)-1, col, localWord);
+				(tempRow1)-=1;
 			}
-			localWord+=scrabbleBoard[row][col].substring(1);
-			if(!scrabbleBoard[row+1][col].equals("| ")){
-			    while (!scrabbleBoard[(tempRow2)+1][col].equals("| ")){
-				localWord+= scrabbleBoard[(tempRow2)+1][col].substring(1);
+			localWord+= addLetter(row, col);
+			if(!getOrCheckAboveOrBelow(row+1, col)){
+			    while (!getOrCheckAboveOrBelow((tempRow2)+1, col)){
+				localWord+= addUDRLLetter2((tempRow2)+1, col);
 				(tempRow2)+=1;
 			    }
 			}
@@ -234,19 +256,19 @@ public class Player extends Woo{
 		    String localWord = "";
 		    int tempCol1 = col;
 		    int tempCol2 = col;
-		    if ((!scrabbleBoard[row][col-1].equals("| ")) || (!scrabbleBoard[row][col-1].equals("|" + row))){
-			while (!(scrabbleBoard[row][(tempCol1)-1].equals("| ") || (scrabbleBoard[row][(tempCol1)-1].equals("|" + row)))){
-			    localWord = scrabbleBoard[row][(tempCol1)-1].substring(1) + localWord;
+		    if (!getOrCheckRightOrLeft(row, col-1)){
+			while (!getOrCheckRightOrLeft(row, (tempCol1)-1)){
+			    localWord = addUDRLLetter1(row, (tempCol1)-1, localWord);
 			    (tempCol1)-=1;
 			}
-			localWord+=scrabbleBoard[row][col].substring(1);
-			if (!scrabbleBoard[row][col+1].equals("| ")){
-			    while (!scrabbleBoard[row][(tempCol2)+1].equals("| ")){
-				    localWord+=scrabbleBoard[row][(tempCol2)+1].substring(1);
-				    (tempCol2)+=1;
-			    }
+			localWord+= addLetter(row, col);
+			if (!getOrCheckRightOrLeft (row, col+1)){
+			while (!getOrCheckRightOrLeft(row, (tempCol2)+1)){
+			    localWord+= addUDRLLetter2(row, (tempCol2)+1);
+			    (tempCol2)+=1;
 			}
 		    }
+		}
 
 		    if (Dictionary.wordChecker(localWord)){
 			row+=1;
