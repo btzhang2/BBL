@@ -20,6 +20,8 @@ UNRESOLVED ISSUES
 * Players and their randomly generated tiles
 * Check the words around the new word for valid words
 * Checks and adding need to be defined and organized
+* Draw must replace only the tiles used
+* Lack of vowels causes the word to be valid?????????????
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
