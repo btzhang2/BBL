@@ -76,6 +76,7 @@ Lisa :: Added a feature to validate multiple new words created when a word is pu
 Brandon :: Removed static variables
 Brooke, Lisa, Brandon :: Reorganized Woo and Player
 Brooke :: Existing letters can now be used in words
+Lisa :: modified README.md 
 ==============================================================
 
 2017-01-18
