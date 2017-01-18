@@ -6,4 +6,5 @@ To do list
 3)Extend words on the board without any existing letters in the word
 4)Draw only replaces letters that were used
 5)Multiple players
-6)Try out multipliers in calculating point value
+6)Skip functionality
+7)Try out multipliers in calculating point value
