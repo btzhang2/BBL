@@ -34,7 +34,30 @@ public class Player extends Woo{
 	firstPieces();
     }
 
+    //creates an ArrayList of existing letters on the board
+    //that will be used in the word, if valid
+    public ArrayList existingLetters(String inputWord) {
+	ArrayList existingLs = new ArrayList();
+	if (direction.equals("r")) {
+	    for (int i = 0; i < inputWord.length(); i++) {
+		if (!scrabbleBoard[row][col+i].equals("| ")) {
+		    existingLs.add(scrabbleBoard[row][col+i].substring(1));
+		}
+	    }
+	}
+	else if (direction.equals("u")) {
+	    for (int i = 0; i < inputWord.length(); i++) {
+		if (!scrabbleBoard[row+i][col].equals("| ")) {
+		    existingLs.add(scrabbleBoard[row+i][col].substring(1));
+		}
+	    }
+	}
+	return existingLs;
+    }
+    
     public boolean letterChecker(String inputWord){
+	ArrayList existingLs = existingLetters(inputWord);
+	
 	boolean validLetters= true;
 	for(int i = 0;i < word.length(); i ++){
 	    int check = 0;
@@ -43,7 +66,12 @@ public class Player extends Woo{
 		    check ++;
 		}
 	    }
-	    if (check >= 7){
+	    for (int n = 0; n < existingLs.size(); n++) {
+		if (! Character.toString(inputWord.charAt(i)).equals((String)existingLs.get(n))) {
+		    check++;
+		}
+	    }
+	    if (check >= currentPieces.size() + existingLs.size()){
 		validLetters = false;
 		break;
 	    }
@@ -67,7 +95,7 @@ public class Player extends Woo{
         validWord = Dictionary.wordChecker(word); //check if word is valid
 
 	//place the letter of the first word at the center of the board (8,8)
-	if (validWord) {
+	if (validWord && letterChecker(word)) {
 	    row = 8;
 	    col = 8;
 
