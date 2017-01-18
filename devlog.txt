@@ -13,11 +13,13 @@ OBSTACLES OVERCOME
 * Created a board and allowed users to input letters on the board
 * Dictionary -- word is checked for validity
 * Words now have to be built off existing words
+* Woo no longer uses static variables (since they are evil apparently??)
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Players and their randomly generated tiles
 * Check the words around the new word for valid words
+* Checks and adding need to be defined and organized
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,14 +66,14 @@ Brooke :: Updated board, Accounted for some potential errors in Woo.java, Implem
 Brandon :: Changed Woo.java to static. Shifted input() to Player.java. Implemented word and letter checker. Uploaded separate file to preserve changes that Brooke made. Will combine the code after organizing.
 ==============================================================
 
-2017-01-15
+2017-01-17
 --------------------------------------------------------------
-Brandon :: 
+Brandon :: Removed static variables
 Brooke ::
 Lisa :: 
 ==============================================================
 
-2017-01-16
+2017-01-18
 --------------------------------------------------------------
 Brandon :: 
 Brooke ::
