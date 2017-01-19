@@ -108,7 +108,7 @@ public class Woo{
 	return scrabbleBoard[row][col].substring(1);
     }
 
-    public String addLetter(int row, int col){
+    public String addLetter1(int row, int col){
 	return scrabbleBoard[row][col].substring(1);
     }  
     

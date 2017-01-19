@@ -28,12 +28,54 @@ public class Player extends Woo{
     }
 
     public void draw(){
-	for(int i = 0; i < 7; i++){
-	    currentPieces.remove(0);
+	//for(int i = 0; i < 7; i++){
+	//    currentPieces.remove(0);
+	//}
+	//firstPieces();
+	ArrayList existingLs = existingLetters(word);
+	String tempWord = "";
+	if (existingLs.size() == 0){
+	    tempWord = word;
+	    for (int i = 0; i < word.length(); i++) {
+		for (int n = 0; n < existingLs.size(); n++) {
+		    if (word.substring(i,i+1).equals(existingLs.get(n))) {
+			tempWord = word.substring(0,i) + word.substring(i+1); //needs work
+		    }
+		}
+	    }
 	}
-	firstPieces();
+	else {
+	    for (int i = 0; i < word.length(); i++) {
+		for (int n = 0; n < existingLs.size(); n++) {
+		    if (word.substring(i,i+1).equals(existingLs.get(n))) {
+			tempWord += word.substring(i,i+1); //needs work
+		    }
+		}
+	    }
+	}
+	for (int i = 0; i < word.length(); i++) {
+	    for (int n = 0; n < existingLs.size(); n++) {
+		if (word.substring(i,i+1).equals(existingLs.get(n))) {
+		    tempWord += word.substring(i,i+1); //needs work
+		}
+	    }
+	}
+	//System.out.println(tempWord); //diagnostics
+	for (int i = 0; i < tempWord.length(); i++) {
+	    for (int n = 0; n < currentPieces.size(); n++) {
+		if (tempWord.substring(i,i+1).equals(currentPieces.get(n))) {
+		    currentPieces.remove(n);
+		}
+	    }
+	}
+	for (int i = currentPieces.size(); i < 7; i++) {
+	    super.scramble();
+	    String s = (String)super.hundredPieces.get(2);
+	    super.hundredPieces.remove(2);
+	    currentPieces.add(i,s);
+	}
     }
-
+    
     //creates an ArrayList of existing letters on the board
     //that will be used in the word, if valid
     public ArrayList existingLetters(String inputWord) {
@@ -321,6 +363,54 @@ public class Player extends Woo{
 	    return;
 	}
 	draw();
+    }
+
+    //assigns a numerical value to each letter and returns the sum of the numerical values in the parameter
+    public int pointsCalculator(String inputWord) {
+	String tempWord = inputWord;
+	int points = 0;
+	while (tempWord.length() > 0) {
+	    String tempChar = tempWord.substring(0,1);
+	    if (tempChar.equals("a") || tempChar.equals("e") || tempChar.equals("o") || tempChar.equals("n")
+		|| tempChar.equals("r") || tempChar.equals("t") || tempChar.equals("l")
+		|| tempChar.equals("s") || tempChar.equals("u") || tempChar.equals("i")) {
+		points += 1;
+	    }
+	    else if (tempChar.equals("d") || tempChar.equals("g")) {
+		points += 2;
+	    }
+	    else if (tempChar.equals("b") || tempChar.equals("c")
+		     || tempChar.equals("m") || tempChar.equals("p")) {
+		points += 3;
+	    }
+	    else if (tempChar.equals("f") || tempChar.equals("h") || tempChar.equals("v")
+		     || tempChar.equals("w") || tempChar.equals("y")) {
+		points += 4;
+	    }
+	    else if (tempChar.equals("k")) {
+		points += 5;
+	    }
+	    else if (tempChar.equals("j") || tempChar.equals("x")) {
+		points += 8;
+	    }
+	    else if (tempChar.equals("q") || tempChar.equals("z")) {
+		points += 10;
+	    }
+	    tempWord = tempWord.substring(1);
+	}
+	return points;
+    }
+
+    //adds points to player
+    public void pointsAdd() {
+	if (validWord) {
+	    points += pointsCalculator(word);
+	}
+    }
+
+    //displays points
+    public int getPoints() {
+	return points;
     }
     
 }
