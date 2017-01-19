@@ -28,10 +28,33 @@ public class Player extends Woo{
     }
 
     public void draw(){
-	for(int i = 0; i < 7; i++){
-	    currentPieces.remove(0);
+	//for(int i = 0; i < 7; i++){
+	//    currentPieces.remove(0);
+	//}
+	//firstPieces();
+	ArrayList existingLs = existingLetters(word);
+	String tempWord = word;
+	for (int i = 0; i < word.length(); i++) {
+	    for (int n = 0; n < existingLs.size(); n++) {
+		if (word.substring(i,i+1).equals(existingLs.get(n))) {
+		    tempWord = word.substring(0,i) + word.substring(i+1); //needs work
+		}
+	    }
 	}
-	firstPieces();
+	//System.out.println(tempWord); //diagnostics
+	for (int i = 0; i < tempWord.length(); i++) {
+	    for (int n = 0; n < currentPieces.size(); n++) {
+		if (tempWord.substring(i,i+1).equals(currentPieces.get(n))) {
+		    currentPieces.remove(n);
+		}
+	    }
+	}
+	for (int i = currentPieces.size(); i < 7; i++) {
+	    super.scramble();
+	    String s = (String)super.hundredPieces.get(2);
+	    super.hundredPieces.remove(2);
+	    currentPieces.add(i,s);
+	}
     }
 
     //creates an ArrayList of existing letters on the board
