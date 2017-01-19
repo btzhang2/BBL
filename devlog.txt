@@ -83,9 +83,8 @@ Lisa :: modified README.md
 
 2017-01-18
 --------------------------------------------------------------
-Brandon :: 
-Brooke ::
-Lisa :: 
+Brandon, Brooke, Lisa :: Organized code 
+Brooke :: Implemented points for players based on letters used
 ==============================================================
 
 
