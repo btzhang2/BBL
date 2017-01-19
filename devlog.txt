@@ -20,10 +20,13 @@ UNRESOLVED ISSUES
 * Players and their randomly generated tiles
 * Check the words around the new word for valid words
 * Checks and adding need to be defined and organized
+* Draw must replace only the tiles used
+* Lack of vowels causes the word to be valid?????????????
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * How to implement a dictionary
+* Static instance variables
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,6 +35,8 @@ MID-DEVELOPMENT DESIGN CHANGES
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * communicate
+* organize code
+* comment, comment, comment
 ||||||||||||||||||||||||||||||||||||||||||
 
 
@@ -81,9 +86,8 @@ Lisa :: modified README.md
 
 2017-01-18
 --------------------------------------------------------------
-Brandon :: 
-Brooke ::
-Lisa :: 
+Brandon, Brooke, Lisa :: Organized code 
+Brooke :: Implemented points for players based on letters used, Started the implementation to modify draw to replace only tiles used
 ==============================================================
 
 

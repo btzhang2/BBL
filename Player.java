@@ -33,6 +33,7 @@ public class Player extends Woo{
 	//}
 	//firstPieces();
 	ArrayList existingLs = existingLetters(word);
+<<<<<<< HEAD
 	String tempWord = "";
 	if (existingLs.size() == 0){
 	    tempWord = word;
@@ -57,6 +58,13 @@ public class Player extends Woo{
 	    for (int n = 0; n < existingLs.size(); n++) {
 		if (word.substring(i,i+1).equals(existingLs.get(n))) {
 		    tempWord += word.substring(i,i+1); //needs work
+=======
+	String tempWord = word;
+	for (int i = 0; i < word.length(); i++) {
+	    for (int n = 0; n < existingLs.size(); n++) {
+		if (word.substring(i,i+1).equals(existingLs.get(n))) {
+		    tempWord = word.substring(0,i) + word.substring(i+1); //needs work
+>>>>>>> 0d2e0cf8ed97e9e75843bea338b4bcc6aae720b5
 		}
 	    }
 	}
