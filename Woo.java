@@ -31,7 +31,7 @@ public class Woo{
 	    }
 	}	
     }
-
+    
     public static void printBoard() {
 	for (int r = 0; r < 16; r++){
 	    for (int c = 0; c < 16; c++){

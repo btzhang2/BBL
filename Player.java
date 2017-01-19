@@ -26,7 +26,7 @@ public class Player extends Woo{
 	    currentPieces.add(i,s);
 	}
     }
-
+    
     public void draw(){
 	//for(int i = 0; i < 7; i++){
 	//    currentPieces.remove(0);
