@@ -33,38 +33,11 @@ public class Player extends Woo{
 	//}
 	//firstPieces();
 	ArrayList existingLs = existingLetters(word);
-<<<<<<< HEAD
-	String tempWord = "";
-	if (existingLs.size() == 0){
-	    tempWord = word;
-	    for (int i = 0; i < word.length(); i++) {
-		for (int n = 0; n < existingLs.size(); n++) {
-		    if (word.substring(i,i+1).equals(existingLs.get(n))) {
-			tempWord = word.substring(0,i) + word.substring(i+1); //needs work
-		    }
-		}
-	    }
-	}
-	else {
-	    for (int i = 0; i < word.length(); i++) {
-		for (int n = 0; n < existingLs.size(); n++) {
-		    if (word.substring(i,i+1).equals(existingLs.get(n))) {
-			tempWord += word.substring(i,i+1); //needs work
-		    }
-		}
-	    }
-	}
-	for (int i = 0; i < word.length(); i++) {
-	    for (int n = 0; n < existingLs.size(); n++) {
-		if (word.substring(i,i+1).equals(existingLs.get(n))) {
-		    tempWord += word.substring(i,i+1); //needs work
-=======
 	String tempWord = word;
 	for (int i = 0; i < word.length(); i++) {
 	    for (int n = 0; n < existingLs.size(); n++) {
 		if (word.substring(i,i+1).equals(existingLs.get(n))) {
 		    tempWord = word.substring(0,i) + word.substring(i+1); //needs work
->>>>>>> 0d2e0cf8ed97e9e75843bea338b4bcc6aae720b5
 		}
 	    }
 	}
@@ -83,7 +56,7 @@ public class Player extends Woo{
 	    currentPieces.add(i,s);
 	}
     }
-    
+
     //creates an ArrayList of existing letters on the board
     //that will be used in the word, if valid
     public ArrayList existingLetters(String inputWord) {
