@@ -26,6 +26,7 @@ UNRESOLVED ISSUES
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * How to implement a dictionary
+* Static instance variables
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,6 +35,8 @@ MID-DEVELOPMENT DESIGN CHANGES
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * communicate
+* organize code
+* comment, comment, comment
 ||||||||||||||||||||||||||||||||||||||||||
 
 
@@ -84,7 +87,7 @@ Lisa :: modified README.md
 2017-01-18
 --------------------------------------------------------------
 Brandon, Brooke, Lisa :: Organized code 
-Brooke :: Implemented points for players based on letters used
+Brooke :: Implemented points for players based on letters used, Started the implementation to modify draw to replace only tiles used
 ==============================================================
 
 
