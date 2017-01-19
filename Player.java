@@ -12,10 +12,12 @@ public class Player extends Woo{
     private int row;
     private int col;
 
-    public Player(String n){
-	name = n;
+    public Player(){
 	firstPieces();
-	System.out.println(currentPieces);
+    }
+
+    public void setName(String Name){
+	name = Name;
     }
 
     public void firstPieces(){
@@ -110,6 +112,7 @@ public class Player extends Woo{
 
     //for the first word that is inputted
     public void firstWord() {
+	System.out.println(currentPieces);
 
 	//allow user to build from a certain direction
 	System.out.println("Please type 'r' to build your word right to left or 'u' to build your word up to down");

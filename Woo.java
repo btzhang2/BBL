@@ -1,3 +1,4 @@
+
 import cs1.Keyboard;
 import java.util.ArrayList;
 
@@ -7,6 +8,7 @@ public class Woo{
     protected static ArrayList hundredPieces = new ArrayList(100);
     protected static String[] englishLetters= {"e","e","e","e","e","e","e","e","e","e","e","e","a","a","a","a","a","a","a","a","a","i","i","i","i","i","i","i","i","i","o","o","o","o","o","o","o","o","n","n","n","n","n","n","r","r","r","r","r","r","t","t","t","t","t","t","l","l","l","l","s","s","s","s","u","u","u","u","d","d","d","d","g","g","g","b","b","m","m","c","c","p","p","f","f","h","h","v","v","w","w","y","y","k","k","j","x","q","z"};
     protected static int skipCounter = 4;
+    protected static int playerNumber;
 
     public static void populate(){
 	//show row numbers, for row numbers 10+, the ones digis of the tens are shown
@@ -67,23 +69,89 @@ public class Woo{
     public static void main (String[] args){
 	populate();
 	hundred(englishLetters);
-	
-       
+
 	System.out.println("How many players will there be?");
-	int playerNumber = Keyboard.readInt();
+	playerNumber = Keyboard.readInt();
+	while(playerNumber < 2 || playerNumber > 4){
+	    System.out.println("There can only be 2-4 players");
+	    playerNumber = Keyboard.readInt();
+	}
+	Player player1 = new Player();
+	Player player2 = new Player();
+	Player player3 = new Player();
+	Player player4 = new Player();
+	
 	System.out.println("Player number 1 what is your name?");
 	String playerName = Keyboard.readWord();
-	Player player1 = new Player(playerName);
+	player1.setName(playerName);
+	System.out.println("Player number 2 what is your name?");
+	String playerName2 = Keyboard.readWord();
+        player2.setName(playerName);
+	if(playerNumber >= 3){
+	    System.out.println("Player number 3 what is your name?");
+	    String playerName3 = Keyboard.readWord();
+	    player3.setName(playerName);
+	}
+	if(playerNumber >= 4){
+	    System.out.println("Player number 4 what is your name?");
+	    String playerName4 = Keyboard.readWord();
+	    player4.setName(playerName);
+	}
+
+	
 	printBoard();
 	player1.firstWord();
 	player1.pointsAdd();
 	printBoard();
 	System.out.println("Points: " + player1.getPoints());
-	while(skipCounter != 0 && hundredPieces.size() != 0){
-	    player1.input();
-	    player1.pointsAdd();
-	    printBoard();
-	    System.out.println("Points: " + player1.getPoints());
+
+	if (playerNumber == 2){
+	    while(skipCounter != 0 && hundredPieces.size() != 0){
+		player2.input();
+		player2.pointsAdd();
+		printBoard();
+		System.out.println("Points: " + player2.getPoints());
+		player1.input();
+		player1.pointsAdd();
+		printBoard();
+		System.out.println("Points: " + player1.getPoints());
+	    }
+	}
+	if (playerNumber == 3){
+	    while(skipCounter != 0 && hundredPieces.size() != 0){
+		player2.input();
+		player2.pointsAdd();
+		printBoard();
+		System.out.println("Points: " + player2.getPoints());
+		player3.input();
+		player3.pointsAdd();
+		printBoard();
+		System.out.println("Points: " + player3.getPoints());
+		player1.input();
+		player1.pointsAdd();
+		printBoard();
+		System.out.println("Points: " + player1.getPoints());
+	    }
+	}
+	if (playerNumber == 4){
+	    while(skipCounter != 0 && hundredPieces.size() != 0){
+		player2.input();
+		player2.pointsAdd();
+		printBoard();
+		System.out.println("Points: " + player2.getPoints());
+		player3.input();
+		player3.pointsAdd();
+		printBoard();
+		System.out.println("Points: " + player3.getPoints());
+		player4.input();
+		player4.pointsAdd();
+		printBoard();
+		System.out.println("Points: " + player4.getPoints());
+		player1.input();
+		player1.pointsAdd();
+		printBoard();
+		System.out.println("Points: " + player1.getPoints());
+	    }
 	}
     }
 }

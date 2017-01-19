@@ -90,4 +90,9 @@ Brandon, Brooke, Lisa :: Organized code
 Brooke :: Implemented points for players based on letters used, Started the implementation to modify draw to replace only tiles used
 ==============================================================
 
+2017-01-19
+--------------------------------------------------------------
+Brandon:Added 2-4 players
+==============================================================
+
 
