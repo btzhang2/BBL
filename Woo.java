@@ -76,10 +76,14 @@ public class Woo{
 	Player player1 = new Player(playerName);
 	printBoard();
 	player1.firstWord();
+	player1.pointsAdd();
 	printBoard();
+	System.out.println("Points: " + player1.getPoints());
 	while(skipCounter != 0 && hundredPieces.size() != 0){
 	    player1.input();
+	    player1.pointsAdd();
 	    printBoard();
+	    System.out.println("Points: " + player1.getPoints());
 	}
     }
 }
