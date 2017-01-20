@@ -11,6 +11,7 @@ public class Player extends Woo{
     private boolean validWord;
     private int row;
     private int col;
+    private ArrayList existingLs = new ArrayList(); //existing letters on the board that are in word
 
     public Player(){
 	firstPieces();
@@ -34,29 +35,29 @@ public class Player extends Woo{
 	//    currentPieces.remove(0);
 	//}
 	//firstPieces();
-	ArrayList existingLs = existingLetters(word);
 	String tempWord = "";
-	if (existingLs.size() == 0){
-	    tempWord = word;
-	}
-	else{
+	String wordHolder = word;
+	System.out.println(existingLs); //diagnostics
+        while (wordHolder.length() > 0) {
 	    for (int i = 0; i < existingLs.size(); i++) {
-		for (int n = 0; n < word.length(); n++) {
-		    if (!word.substring(n,n+1).equals(existingLs.get(i))) {
-			tempWord += word.substring(n,n+1); //needs work
-		    }
+		if (wordHolder.substring(0,1).equals(existingLs.get(i))) {
+		    wordHolder = wordHolder.substring(1);
+		}
+		else {
+		    tempWord += wordHolder.substring(0,1);
+		    wordHolder = wordHolder.substring(1);
 		}
 	    }
-	}
+	} //this part kinda works
 	System.out.println(tempWord); //diagnostics
 	for (int i = 0; i < tempWord.length(); i++) {
 	    for (int n = 0; n < currentPieces.size(); n++) {
 		if (tempWord.substring(i,i+1).equals(currentPieces.get(n))) {
 		    currentPieces.remove(n);
-		    tempWord.substring(i); //i think it works?
+		    tempWord.substring(i); 
 		}
 	    }
-	}
+	} //this part doesn't
 	for (int i = currentPieces.size(); i < 7; i++) {
 	    super.scramble();
 	    String s = (String)super.hundredPieces.get(2);
@@ -67,8 +68,7 @@ public class Player extends Woo{
 
     //creates an ArrayList of existing letters on the board
     //that will be used in the word, if valid
-    public ArrayList existingLetters(String inputWord) {
-	ArrayList existingLs = new ArrayList();
+    public void existingLetters(String inputWord) {
 	if (direction.equals("r")) {
 	    for (int i = 0; i < inputWord.length(); i++) {
 		if (!scrabbleBoard[row][col+i].equals("| ")) {
@@ -83,12 +83,10 @@ public class Player extends Woo{
 		}
 	    }
 	}
-	return existingLs;
     }
     
     public boolean letterChecker(String inputWord){
-	ArrayList existingLs = existingLetters(inputWord);
-	
+	existingLetters(inputWord);
 	boolean validLetters= true;
 	for(int i = 0;i < word.length(); i ++){
 	    int check = 0;
@@ -159,6 +157,7 @@ public class Player extends Woo{
 	else{
 	    System.out.println("Sorry, the word you input is not valid. Please type another word. \n ");
 	    firstWord();
+	    return;
 	}
 	draw();
     }
