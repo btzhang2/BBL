@@ -14,14 +14,14 @@ OBSTACLES OVERCOME
 * Dictionary -- word is checked for validity
 * Words now have to be built off existing words
 * Woo no longer uses static variables (since they are evil apparently??)
+* Players and their randomly generated tiles
+* Check the words around the new word for valid words
+* Dictionary has some weird words (ypp is a word?) but we'll go with it
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Players and their randomly generated tiles
-* Check the words around the new word for valid words
 * Checks and adding need to be defined and organized
 * Draw must replace only the tiles used
-* Lack of vowels causes the word to be valid?????????????
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
