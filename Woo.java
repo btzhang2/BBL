@@ -100,57 +100,67 @@ public class Woo{
 
 	
 	printBoard();
+	System.out.println("Player 1 moves");
 	player1.firstWord();
 	player1.pointsAdd();
 	printBoard();
-	System.out.println("Points: " + player1.getPoints());
+	System.out.println("Player 1 points: " + player1.getPoints());
 
 	if (playerNumber == 2){
 	    while(skipCounter != 0 && hundredPieces.size() != 0){
+		System.out.println("Player 2 moves");
 		player2.input();
 		player2.pointsAdd();
 		printBoard();
-		System.out.println("Points: " + player2.getPoints());
+		System.out.println("Player 2 points: " + player2.getPoints());
+		System.out.println("Player 1 moves");
 		player1.input();
 		player1.pointsAdd();
 		printBoard();
-		System.out.println("Points: " + player1.getPoints());
+		System.out.println("Player 1 points: " + player1.getPoints());
 	    }
 	}
 	if (playerNumber == 3){
 	    while(skipCounter != 0 && hundredPieces.size() != 0){
+		System.out.println("Player 2 moves");
 		player2.input();
 		player2.pointsAdd();
 		printBoard();
-		System.out.println("Points: " + player2.getPoints());
+		System.out.println("Player 2 points: " + player2.getPoints());
+		System.out.println("Player 3 moves");
 		player3.input();
 		player3.pointsAdd();
 		printBoard();
-		System.out.println("Points: " + player3.getPoints());
+		System.out.println("Player 3 points: " + player3.getPoints());
+		System.out.println("Player 1 moves");
 		player1.input();
 		player1.pointsAdd();
 		printBoard();
-		System.out.println("Points: " + player1.getPoints());
+		System.out.println("Player 1 points: " + player1.getPoints());
 	    }
 	}
 	if (playerNumber == 4){
 	    while(skipCounter != 0 && hundredPieces.size() != 0){
+		System.out.println("Player 2 moves");
 		player2.input();
 		player2.pointsAdd();
 		printBoard();
-		System.out.println("Points: " + player2.getPoints());
+		System.out.println("Player 2 points: " + player2.getPoints());
+		System.out.println("Player 3 moves");
 		player3.input();
 		player3.pointsAdd();
 		printBoard();
-		System.out.println("Points: " + player3.getPoints());
+		System.out.println("Player 3 points: " + player3.getPoints());
+		System.out.println("Player 4 moves");
 		player4.input();
 		player4.pointsAdd();
 		printBoard();
-		System.out.println("Points: " + player4.getPoints());
+		System.out.println("Player 4 points: " + player4.getPoints());
+		System.out.println("Player 1 moves");
 		player1.input();
 		player1.pointsAdd();
 		printBoard();
-		System.out.println("Points: " + player1.getPoints());
+		System.out.println("Player 1 points: " + player1.getPoints());
 	    }
 	}
     }

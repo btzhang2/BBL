@@ -40,11 +40,11 @@ public class Player extends Woo{
 	    tempWord = word;
 	}
 	else{
-	    for (int i = 0; i < word.length(); i++) {
-		for (int n = 0; n < existingLs.size(); n++) {
-		    if (!word.substring(i,i+1).equals(existingLs.get(n))) {
-			tempWord += word.substring(i, i+1); //needs work
-		    }                                                         //must remove existing Ls from tempword
+	    for (int i = 0; i < existingLs.size(); i++) {
+		for (int n = 0; n < word.length(); n++) {
+		    if (!word.substring(n,n+1).equals(existingLs.get(i))) {
+			tempWord += word.substring(n,n+1); //needs work
+		    }
 		}
 	    }
 	}
