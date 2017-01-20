@@ -94,7 +94,7 @@ Brooke :: Implemented points for players based on letters used, Started the impl
 --------------------------------------------------------------
 Brandon :: Added 2-4 players
 Brooke :: worked on fixing draw()
-Lisa :: worked on pointsCalculator() to get points for double letter/triple letter
+Lisa :: worked on pointsCalculator() to get points for double letter/triple letter.
 ==============================================================
 
 
