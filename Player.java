@@ -29,7 +29,7 @@ public class Player extends Woo{
 	    currentPieces.add(i,s);
 	}
     }
-    
+
     public void draw(){
 	//for(int i = 0; i < 7; i++){
 	//    currentPieces.remove(0);
@@ -39,6 +39,10 @@ public class Player extends Woo{
 	String wordHolder = word;
 	System.out.println(existingLs); //diagnostics
         while (wordHolder.length() > 0) {
+	    if (existingLs.size() == 0) {
+		tempWord = word;
+		wordHolder = "";
+	    }
 	    for (int i = 0; i < existingLs.size(); i++) {
 		if (wordHolder.substring(0,1).equals(existingLs.get(i))) {
 		    wordHolder = wordHolder.substring(1);
@@ -48,16 +52,18 @@ public class Player extends Woo{
 		    wordHolder = wordHolder.substring(1);
 		}
 	    }
-	} //this part kinda works
+	} //this part works
 	System.out.println(tempWord); //diagnostics
-	for (int i = 0; i < tempWord.length(); i++) {
-	    for (int n = 0; n < currentPieces.size(); n++) {
-		if (tempWord.substring(i,i+1).equals(currentPieces.get(n))) {
-		    currentPieces.remove(n);
-		    tempWord.substring(i); 
+        while (tempWord.length() > 0) {
+	    for (int i = 0; i < currentPieces.size(); i++) {
+		if (tempWord.substring(0,1).equals(currentPieces.get(i))) {
+		    //System.out.println(tempWord); //diagnostics
+		    currentPieces.remove(i);
+		    tempWord = tempWord.substring(1);
+		    continue;
 		}
 	    }
-	} //this part doesn't
+	} //works sometimes?????????????????
 	for (int i = currentPieces.size(); i < 7; i++) {
 	    super.scramble();
 	    String s = (String)super.hundredPieces.get(2);
