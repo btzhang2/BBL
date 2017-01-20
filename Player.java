@@ -112,10 +112,12 @@ public class Player extends Woo{
     public void firstWord() {
 	System.out.println(currentPieces);
 
+	row = 8;
+	col = 8;
+
 	//allow user to build from a certain direction
 	System.out.println("Please type 'r' to build your word right to left or 'u' to build your word up to down");
         direction = Keyboard.readWord();
-
 	
 	System.out.println("Please type the word you want to input");
         word = Keyboard.readWord();
@@ -126,9 +128,6 @@ public class Player extends Woo{
 
 	//place the letter of the first word at the center of the board (8,8)
 	if (validWord && letterChecker(word)) {
-	    row = 8;
-	    col = 8;
-
 	    //place each letter in the slots (from right to left or up to down)
 	    if (direction.equals("r")){
 		while (wordIndex < wordLength){
