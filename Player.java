@@ -4,7 +4,7 @@ import cs1.Keyboard;
 public class Player extends Woo{
     private int points =0;
     private String name;
-    private ArrayList currentPieces = new ArrayList();
+    private ArrayList currentPieces = new ArrayList(); 
     private String direction;
     private String word;
     private int wordLength;
@@ -13,18 +13,22 @@ public class Player extends Woo{
     private int col;
     private ArrayList existingLs = new ArrayList(); //existing letters on the board that are in word
 
+    //constructor; gives each player 7 pieces    
     public Player(){
 	firstPieces();
     }
 
+    //sets the player's name
     public void setName(String Name){
 	name = Name;
     }
 
+    //returns name
     public String getName() {
 	return name;
     }
 
+    //randomly selects 7 pieces
     public void firstPieces(){
 	for(int i = 0; i<7; i++){
 	    super.scramble();
@@ -34,6 +38,7 @@ public class Player extends Woo{
 	}
     }
 
+    //randomly selects pieces to replace those used
     public void draw(){
 	String tempWord = "";
 	String wordHolder = word;
@@ -96,7 +101,8 @@ public class Player extends Woo{
 	    }
 	}
     }
-    
+
+    //checks if letters used are in a player's pieces or already on the board
     public boolean letterChecker(String inputWord){
 	existingLetters(inputWord);
 	boolean validLetters= true;
@@ -464,6 +470,7 @@ public class Player extends Woo{
 	return points;
     }
 
+    //multiplies letter points based on location on the board
     public int boardPts(int tempRow, int tempCol, int oPoints){
 	    if (direction.equals("r")){
 		    if (tempRow == 1 || tempRow == 15){
@@ -542,6 +549,7 @@ public class Player extends Woo{
 	    return oPoints;
     }
 
+    //multiplies word points based on location on the board
     public int boardPts1(int tempRow, int tempCol, int fixedRow, int fixedCol, int points, String inputWord){
 	if (direction.equals("r")){
 	    if (tempRow == 1 || tempRow == 15){
