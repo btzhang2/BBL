@@ -34,9 +34,10 @@ MID-DEVELOPMENT DESIGN CHANGES
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* communicate
+* communicate!!!
 * organize code
 * comment, comment, comment
+* print statements to debug
 ||||||||||||||||||||||||||||||||||||||||||
 
 
