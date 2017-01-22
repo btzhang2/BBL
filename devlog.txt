@@ -105,3 +105,8 @@ Lisa :: Implemented multiplier letters, multiplier words.
 Brandon :: Added shuffling option to player options
 ==============================================================
 
+
+2017-01-22
+--------------------------------------------------------------
+Lisa :: Added flow.pdf and uml.pdf
+==============================================================
