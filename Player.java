@@ -51,6 +51,7 @@ public class Player extends Woo{
 		    else {
 			tempWord += wordHolder.substring(0,1);
 			wordHolder = wordHolder.substring(1);
+			break;
 		    }
 		}
 	    }
