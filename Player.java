@@ -46,21 +46,23 @@ public class Player extends Woo{
 	    if (existingLs.size() == 0) {
 		tempWord = word;
 		wordHolder = "";
+		break;
 	    }
 	    else {
+		int ctr = 0;
 		for (int i = 0; i < existingLs.size(); i++) {
 		    if (wordHolder.substring(0,1).equals(existingLs.get(i))) {
 			wordHolder = wordHolder.substring(1);
-			break;
-		    }
-		    else {
-			tempWord += wordHolder.substring(0,1);
-			wordHolder = wordHolder.substring(1);
+			ctr += 1;
 			break;
 		    }
 		}
+		if (ctr == 0) {
+		    tempWord += wordHolder.substring(0,1);
+		    wordHolder = wordHolder.substring(1);
+		}
 	    }
-	} 
+	}
         while (tempWord.length() > 0) {
 	    for (int i = 0; i < currentPieces.size(); i++) {
 		if (tempWord.substring(0,1).equals(currentPieces.get(i))) {
