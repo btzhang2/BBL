@@ -1,4 +1,3 @@
-
 import cs1.Keyboard;
 import java.util.ArrayList;
 
@@ -34,6 +33,7 @@ public class Woo{
 	}	
     }
     
+    //prints the board, including all words and the row and column indices
     public static void printBoard() {
 	for (int r = 0; r < 16; r++){
 	    for (int c = 0; c < 16; c++){
@@ -69,6 +69,7 @@ public class Woo{
 
     }   
        
+    //main method
     public static void main (String[] args){
 	populate();
 	hundred(englishLetters);
@@ -104,7 +105,7 @@ public class Woo{
 	    skipCounter = 4;
 	}
 
-	
+	//player 1's first turn
 	printBoard();
 	System.out.println(player1.getName() + " moves");
 	player1.firstWord();
@@ -112,6 +113,7 @@ public class Woo{
 	printBoard();
 	System.out.println(player1.getName() + " points: " + player1.getPoints());
 
+	//if there are two players, play until both have skipped or the pieces have run out
 	if (playerNumber == 2){
 	    while(skipCounter > 0 && hundredPieces.size() > 0){
 		System.out.println(player2.getName() + " moves");
@@ -125,6 +127,7 @@ public class Woo{
 		printBoard();
 		System.out.println(player1.getName() + " points: " + player1.getPoints());
 	    }
+	    //displays ending and winner
 	    System.out.println("The game is now over.");
 	    System.out.println(player1.getName() + " points: " + player1.getPoints());
 	    System.out.println(player2.getName() + " points: " + player2.getPoints());
@@ -138,6 +141,7 @@ public class Woo{
 		System.out.println("There was a tie.");
 	    }
 	}
+	//if there are 3 players, play until all have skipped or the pieces have run out
 	if (playerNumber == 3){
 	    while(skipCounter > 0 && hundredPieces.size() > 0){
 		System.out.println(player2.getName() + " moves");
@@ -156,6 +160,7 @@ public class Woo{
 		printBoard();
 		System.out.println(player1.getName() + " points: " + player1.getPoints());
 	    }
+	    //displays ending and winner
 	    System.out.println("The game is now over.");
 	    System.out.println(player1.getName() + " points: " + player1.getPoints());
 	    System.out.println(player2.getName() + " points: " + player2.getPoints());
@@ -173,6 +178,7 @@ public class Woo{
 		System.out.println("There was a tie.");
 	    }
 	}
+	//if there are 4 players, play until all have skipped or the pieces have run out
 	if (playerNumber == 4){
 	    while(skipCounter > 0 && hundredPieces.size() > 0){
 		System.out.println(player2.getName() + " moves");
@@ -196,6 +202,7 @@ public class Woo{
 		printBoard();
 		System.out.println(player1.getName() + " points: " + player1.getPoints());
 	    }
+	    //displays ending and winner
 	    System.out.println("The game is now over.");
 	    System.out.println(player1.getName() + " points: " + player1.getPoints());
 	    System.out.println(player2.getName() + " points: " + player2.getPoints());
