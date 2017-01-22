@@ -381,37 +381,151 @@ public class Player extends Woo{
     //assigns a numerical value to each letter and returns the sum of the numerical values in the parameter
     public int pointsCalculator(String inputWord) {
 	String tempWord = inputWord;
+	int tempRow = row;
+	int tempCol = col;
 	int points = 0;
+	if (direction.equals("r")){
+	    tempCol-=inputWord.length();
+	}
+	if (direction.equals("u")){
+	    tempRow-=inputWord.length();
+	}
 	while (tempWord.length() > 0) {
 	    String tempChar = tempWord.substring(0,1);
 	    if (tempChar.equals("a") || tempChar.equals("e") || tempChar.equals("o") || tempChar.equals("n")
 		|| tempChar.equals("r") || tempChar.equals("t") || tempChar.equals("l")
 		|| tempChar.equals("s") || tempChar.equals("u") || tempChar.equals("i")) {
-		points += 1;
+	        points+=boardPts(tempRow, tempCol, 1);
+		System.out.println("current Points " + points);
+		System.out.println("tempRow: " + tempRow);
+		System.out.println("tempCol: " + tempCol);
+		
 	    }
 	    else if (tempChar.equals("d") || tempChar.equals("g")) {
-		points += 2;
+	        points+=boardPts(tempRow, tempCol, 2);
+		System.out.println("current Points " + points);
+		System.out.println("tempRow: " + tempRow);
+		System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("b") || tempChar.equals("c")
 		     || tempChar.equals("m") || tempChar.equals("p")) {
-		points += 3;
+	        points+=boardPts(tempRow, tempCol, 3);
+		System.out.println("current Points " + points);
+		System.out.println("tempRow: " + tempRow);
+		System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("f") || tempChar.equals("h") || tempChar.equals("v")
 		     || tempChar.equals("w") || tempChar.equals("y")) {
-		points += 4;
+	        points+=boardPts(tempRow, tempCol, 4);
+		System.out.println("current Points " + points);
+		System.out.println("tempRow: " + tempRow);
+		System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("k")) {
-		points += 5;
+	        points+=boardPts(tempRow, tempCol, 5);
+		System.out.println("current Points " + points);
+		System.out.println("tempRow: " + tempRow);
+		System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("j") || tempChar.equals("x")) {
-		points += 8;
+	        points+=boardPts(tempRow, tempCol, 8);
+		System.out.println("current Points " + points);
+		System.out.println("tempRow: " + tempRow);
+		System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("q") || tempChar.equals("z")) {
-		points += 10;
-	    }
+	        points+=boardPts(tempRow, tempCol, 10);
+		System.out.println("current Points " + points);
+		System.out.println("tempRow: " + tempRow);
+		System.out.println("tempCol: " + tempCol);
+	    }	
 	    tempWord = tempWord.substring(1);
+	    if (direction.equals("r")){
+		tempCol+=1;
+	    }
+	    else if (direction.equals("u")){
+		tempRow+=1;
+	    }
 	}
 	return points;
+    }
+
+    public int boardPts(int tempRow, int tempCol, int oPoints){
+	    if (direction.equals("r")){
+		    if (tempRow == 1 || tempRow == 15){
+			if (tempCol == 4 || tempCol == 12){
+			    return (2*oPoints);
+			}
+		    }
+		    else if (tempRow == 2 || tempRow == 14){
+			if (tempCol == 6 || tempCol == 10){
+			    return (3*oPoints);
+			}
+		    }
+		    else if (tempRow == 3 || tempRow == 13){
+			if (tempCol == 7 || tempCol == 9){
+			    return (2*oPoints);
+			}
+		    }
+		    else if (tempRow == 4 || tempRow == 12){
+			if (tempCol == 8){
+			    return (2*oPoints);
+			}
+		    }
+		    else if (tempRow == 6 || tempRow == 10){
+			if (tempCol == 2 || tempCol == 6 || tempCol == 10 || tempCol == 14){
+			    return (3*oPoints);
+			}
+		    }
+		    else if (tempRow == 7 || tempRow == 9){
+			if (tempCol == 3 || tempCol == 7 || tempCol == 9 || tempCol == 13){
+			    return (2*oPoints);
+			}
+		    }
+		    else if (tempRow == 8){
+			if (tempCol == 4 || tempCol == 12){
+			    return (2*oPoints);
+			}
+		    }
+	    }
+	    if (direction.equals("u")){
+		    if (tempCol == 1 || tempCol == 15){
+			if (tempRow == 4 || tempRow == 12){
+			   return (2*oPoints);
+			}
+		    }
+		    else if (tempCol == 2 || tempCol == 14){
+			if (tempRow == 6 || tempRow == 10){
+			    return(3*oPoints);
+			}
+		    }
+		    else if (tempCol == 3 || tempCol == 13){
+			if (tempRow == 7 || tempRow == 9){
+			    points+=(2*oPoints);
+			}
+		    }
+		    else if (tempCol == 4 || tempCol == 12){
+			if (tempRow == 8){
+			    return (2*oPoints);
+			}
+		    }
+		    else if (tempCol == 6 || tempCol == 10){
+			if (tempRow == 2 || tempRow == 6 || tempRow == 10 || tempRow == 14){
+			    return (3*oPoints);
+			}
+		    }
+		    else if (tempCol == 7 || tempCol == 9){
+			if (tempRow == 3 || tempRow == 7 || tempRow == 9 || tempRow == 13){
+			    return (2*oPoints);
+			}
+		    }
+		    else if (tempCol == 8){
+			if (tempRow == 4 || tempRow == 12){
+			    return (2*oPoints);
+			}
+		    }
+	    }
+	    return oPoints;
     }
 
     //adds points to player
