@@ -43,13 +43,17 @@ public class Player extends Woo{
 		tempWord = word;
 		wordHolder = "";
 	    }
-	    for (int i = 0; i < existingLs.size(); i++) {
-		if (wordHolder.substring(0,1).equals(existingLs.get(i))) {
-		    wordHolder = wordHolder.substring(1);
-		}
-		else {
-		    tempWord += wordHolder.substring(0,1);
-		    wordHolder = wordHolder.substring(1);
+	    else {
+		for (int i = 0; i < existingLs.size(); i++) {
+		    System.out.println(wordHolder); //diagnostics
+		    if (wordHolder.substring(0,1).equals(existingLs.get(i))) {
+			wordHolder = wordHolder.substring(1);
+			break;
+		    }
+		    else {
+			tempWord += wordHolder.substring(0,1);
+			wordHolder = wordHolder.substring(1);
+		    }
 		}
 	    }
 	} //this part works usually
@@ -75,6 +79,9 @@ public class Player extends Woo{
     //creates an ArrayList of existing letters on the board
     //that will be used in the word, if valid
     public void existingLetters(String inputWord) {
+	for (int i = 0; i < existingLs.size(); i++) {
+	    existingLs.remove(i);
+	}
 	if (direction.equals("r")) {
 	    for (int i = 0; i < inputWord.length(); i++) {
 		if (!scrabbleBoard[row][col+i].equals("| ")) {
