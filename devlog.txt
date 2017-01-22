@@ -99,7 +99,7 @@ Lisa :: worked on pointsCalculator() to get points for double letter/triple lett
 
 2017-01-21
 --------------------------------------------------------------
-Brooke :: Fixed draw(), Implemented skip functionality
-Lisa :: 
+Brooke :: Fixed draw(), Implemented skip functionality, Added ending of game and winner
+Lisa :: Implemented multiplier letters
 ==============================================================
 
