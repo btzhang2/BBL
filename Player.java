@@ -21,6 +21,10 @@ public class Player extends Woo{
 	name = Name;
     }
 
+    public String getName() {
+	return name;
+    }
+
     public void firstPieces(){
 	for(int i = 0; i<7; i++){
 	    super.scramble();
@@ -31,13 +35,8 @@ public class Player extends Woo{
     }
 
     public void draw(){
-	//for(int i = 0; i < 7; i++){
-	//    currentPieces.remove(0);
-	//}
-	//firstPieces();
 	String tempWord = "";
 	String wordHolder = word;
-	System.out.println(existingLs); //diagnostics
         while (wordHolder.length() > 0) {
 	    if (existingLs.size() == 0) {
 		tempWord = word;
@@ -45,7 +44,6 @@ public class Player extends Woo{
 	    }
 	    else {
 		for (int i = 0; i < existingLs.size(); i++) {
-		    System.out.println(wordHolder); //diagnostics
 		    if (wordHolder.substring(0,1).equals(existingLs.get(i))) {
 			wordHolder = wordHolder.substring(1);
 			break;
@@ -56,8 +54,7 @@ public class Player extends Woo{
 		    }
 		}
 	    }
-	} //this part works usually
-	System.out.println(tempWord); //diagnostics
+	} 
         while (tempWord.length() > 0) {
 	    for (int i = 0; i < currentPieces.size(); i++) {
 		if (tempWord.substring(0,1).equals(currentPieces.get(i))) {
@@ -66,8 +63,7 @@ public class Player extends Woo{
 		    break;
 		}
 	    }
-	    System.out.println(tempWord); //diagnostics
-	} //works i think
+	}
 	for (int i = currentPieces.size(); i < 7; i++) {
 	    super.scramble();
 	    String s = (String)super.hundredPieces.get(2);
@@ -124,6 +120,14 @@ public class Player extends Woo{
     //for the first word that is inputted
     public void firstWord() {
 	System.out.println(currentPieces);
+
+	//asks if the player wants to skip
+	System.out.println("Do you want to skip your turn? Type 'y' to skip and 'n' for no");
+	String skip = Keyboard.readWord();
+	if (skip.equals("y")) {
+	    skipCounter -= 1;
+	    return;
+	}
 
 	row = 8;
 	col = 8;
@@ -199,6 +203,14 @@ public class Player extends Woo{
     //for every word after the first word that is input
     public void input(){
 	System.out.println(currentPieces);
+
+	//asks if the player wants to skip
+	System.out.println("Do you want to skip your turn? Type 'y' to skip and 'n' for no");
+	String skip = Keyboard.readWord();
+	if (skip.equals("y")) {
+	    skipCounter -= 1;
+	    return;
+	}
 
 	//check if input for row is valid.
 	System.out.println("Please input the row index.");
@@ -290,7 +302,7 @@ public class Player extends Woo{
 		while (wordIndex < wordLength){
 		    scrabbleBoard[row][col] = "|" + word.substring(wordIndex, wordIndex+1);
 
-		    //check if local words are valid as letetr are inputted
+		    //check if local words are valid as letter are inputted
 		    String localWord = "";
 		    int tempRow1 = row;
 		    int tempRow2 = row;
