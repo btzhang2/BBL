@@ -18,10 +18,10 @@ OBSTACLES OVERCOME
 * Check the words around the new word for valid words
 * Dictionary has some weird words (ypp is a word?) but we'll go with it
 * After five hours of working, Brooke realized that draw() was not working properly because existingsLs didn't reset each time.
+* Checks and adding need to be defined and organized
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Checks and adding need to be defined and organized
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ LESSONS LEARNED
 * organize code
 * comment, comment, comment
 * print statements to debug
-* always have a backupfile in case new changes don't work and give you a 100 errors
+* always have a backup file in case new changes don't work and give you a 100 errors
 ||||||||||||||||||||||||||||||||||||||||||
 
 
