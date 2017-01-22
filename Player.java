@@ -356,7 +356,6 @@ public class Player extends Woo{
 	    String response = Keyboard.readWord();
 	    if(response.equals("y")){
 		validWord = true;
-		System.out.println(validWord);
 	    }
 	}
 
