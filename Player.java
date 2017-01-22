@@ -360,8 +360,6 @@ public class Player extends Woo{
 	    }
 	}
 
-	System.out.println(validWord);
-	System.out.println(letterChecker(word));
 	//place letters into the board
 	if (validWord && letterChecker(word)) {
 	    if (direction.equals("r")){
