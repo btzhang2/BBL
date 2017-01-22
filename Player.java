@@ -12,10 +12,12 @@ public class Player extends Woo{
     private int row;
     private int col;
     private ArrayList existingLs = new ArrayList(); //existing letters on the board that are in word
+    private int playerNumber;
 
     //constructor; gives each player 7 pieces    
-    public Player(){
+    public Player(int player){
 	firstPieces();
+	playerNumber = player;
     }
 
     //sets the player's name
@@ -246,7 +248,7 @@ public class Player extends Woo{
 	}
 
 	//asks if player wants to shuffle pieces
-	System.out.println("Do you want to shuffle your pieces? Type 'y' to shuffle and 'n' to not");
+	System.out.println("Do you want to shuffle your pieces? Type 'y' to shuffle and 'n' to not (shuffling takes up a turn)");
 	String shuffle = Keyboard.readWord();
 	if(shuffle.equals("y")){
 	    shuffle();
@@ -337,6 +339,18 @@ public class Player extends Woo{
 	int wordIndex = 0;
         validWord = Dictionary.wordChecker(word);
 
+	if(!validWord){
+	    System.out.println("The word you input was not in our dictionary " + name);
+	    System.out.println("What do the other players think, is the word valid ('y') or not ('n')");
+	    String response = Keyboard.readWord();
+	    if(response.equals("y")){
+		validWord = true;
+		System.out.println(validWord);
+	    }
+	}
+
+	System.out.println(validWord);
+	System.out.println(letterChecker(word));
 	//place letters into the board
 	if (validWord && letterChecker(word)) {
 	    if (direction.equals("r")){
