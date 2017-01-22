@@ -52,18 +52,18 @@ public class Player extends Woo{
 		    wordHolder = wordHolder.substring(1);
 		}
 	    }
-	} //this part works
+	} //this part works usually
 	System.out.println(tempWord); //diagnostics
         while (tempWord.length() > 0) {
 	    for (int i = 0; i < currentPieces.size(); i++) {
 		if (tempWord.substring(0,1).equals(currentPieces.get(i))) {
-		    //System.out.println(tempWord); //diagnostics
 		    currentPieces.remove(i);
 		    tempWord = tempWord.substring(1);
-		    continue;
+		    break;
 		}
 	    }
-	} //works sometimes?????????????????
+	    System.out.println(tempWord); //diagnostics
+	} //works i think
 	for (int i = currentPieces.size(); i < 7; i++) {
 	    super.scramble();
 	    String s = (String)super.hundredPieces.get(2);
