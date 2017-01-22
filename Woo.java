@@ -43,12 +43,14 @@ public class Woo{
 	}
     }
 
+    // add the English letters to hundredPieces
     public static void hundred(String[] s){
 	for(int i = 0; i< s.length; i++){
 	    hundredPieces.add(englishLetters[i]);
 	}
     }
 
+    // swap hundredPieces to mix up English letters in hundredPieces
     public static void swap( int i, int j ) {
 	String x = (String)hundredPieces.get(i);
 	String y = (String)hundredPieces.get(j);
@@ -58,7 +60,8 @@ public class Woo{
         hundredPieces.add(i, y);
 	
     }
-
+    
+    // scramble the pieces in hundredPieces
     public static void scramble() {
 	for(int i = 0; i<hundredPieces.size(); i++){
 	    swap(i, ((int)(Math.random() * hundredPieces.size()-1)));
