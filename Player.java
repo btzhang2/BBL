@@ -142,7 +142,7 @@ public class Player extends Woo{
 	col = 8;
 
 	//allow user to build from a certain direction
-	System.out.println("Please type 'r' to build your word right to left or 'u' to build your word up to down");
+	System.out.println("Please type 'r' to build your word from left to right or 'u' to build your word from up to down");
         direction = Keyboard.readWord();
 	
 	System.out.println("Please type the word you want to input");
@@ -409,48 +409,48 @@ public class Player extends Woo{
 		|| tempChar.equals("r") || tempChar.equals("t") || tempChar.equals("l")
 		|| tempChar.equals("s") || tempChar.equals("u") || tempChar.equals("i")) {
 	        points+=boardPts(tempRow, tempCol, 1);
-		System.out.println("current Points " + points);
-		System.out.println("tempRow: " + tempRow);
-		System.out.println("tempCol: " + tempCol);
+		//System.out.println("current Points " + points);
+		//System.out.println("tempRow: " + tempRow);
+		//System.out.println("tempCol: " + tempCol);
 		
 	    }
 	    else if (tempChar.equals("d") || tempChar.equals("g")) {
 	        points+=boardPts(tempRow, tempCol, 2);
-		System.out.println("current Points " + points);
-		System.out.println("tempRow: " + tempRow);
-		System.out.println("tempCol: " + tempCol);
+		//System.out.println("current Points " + points);
+		//System.out.println("tempRow: " + tempRow);
+		//System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("b") || tempChar.equals("c")
 		     || tempChar.equals("m") || tempChar.equals("p")) {
 	        points+=boardPts(tempRow, tempCol, 3);
-		System.out.println("current Points " + points);
-		System.out.println("tempRow: " + tempRow);
-		System.out.println("tempCol: " + tempCol);
+		//System.out.println("current Points " + points);
+		//System.out.println("tempRow: " + tempRow);
+		//System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("f") || tempChar.equals("h") || tempChar.equals("v")
 		     || tempChar.equals("w") || tempChar.equals("y")) {
 	        points+=boardPts(tempRow, tempCol, 4);
-		System.out.println("current Points " + points);
-		System.out.println("tempRow: " + tempRow);
-		System.out.println("tempCol: " + tempCol);
+		//System.out.println("current Points " + points);
+		//System.out.println("tempRow: " + tempRow);
+		//System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("k")) {
 	        points+=boardPts(tempRow, tempCol, 5);
-		System.out.println("current Points " + points);
-		System.out.println("tempRow: " + tempRow);
-		System.out.println("tempCol: " + tempCol);
+		//System.out.println("current Points " + points);
+		//System.out.println("tempRow: " + tempRow);
+		//System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("j") || tempChar.equals("x")) {
 	        points+=boardPts(tempRow, tempCol, 8);
-		System.out.println("current Points " + points);
-		System.out.println("tempRow: " + tempRow);
-		System.out.println("tempCol: " + tempCol);
+		//System.out.println("current Points " + points);
+		//System.out.println("tempRow: " + tempRow);
+		//System.out.println("tempCol: " + tempCol);
 	    }
 	    else if (tempChar.equals("q") || tempChar.equals("z")) {
 	        points+=boardPts(tempRow, tempCol, 10);
-		System.out.println("current Points " + points);
-		System.out.println("tempRow: " + tempRow);
-		System.out.println("tempCol: " + tempCol);
+		//System.out.println("current Points " + points);
+		//System.out.println("tempRow: " + tempRow);
+		//System.out.println("tempCol: " + tempCol);
 	    }	
 	    tempWord = tempWord.substring(1);
 	    if (direction.equals("r")){
