@@ -82,6 +82,28 @@ public class Player extends Woo{
 	}
     }
 
+    //Shuffles current pieces available to play
+    public void shuffle(){
+	int size = currentPieces.size();
+	for (int i = 0; i < size; i ++){
+	    String s = (String)currentPieces.get(0);
+	    currentPieces.remove(0);
+	    super.hundredPieces.add(s);
+	}
+	for (int i = currentPieces.size(); i < 7; i++) {
+	    if (hundredPieces.size() > 0) {
+		super.scramble();
+		String s = (String)super.hundredPieces.get(2);
+		super.hundredPieces.remove(2);
+		currentPieces.add(i,s);
+	    }
+	    else{
+		System.out.println("There are no more pieces left");
+		break;
+	    }
+	}
+    }
+
     //creates an ArrayList of existing letters on the board
     //that will be used in the word, if valid
     public void existingLetters(String inputWord) {
@@ -216,10 +238,18 @@ public class Player extends Woo{
 	System.out.println(currentPieces);
 
 	//asks if the player wants to skip
-	System.out.println("Do you want to skip your turn? Type 'y' to skip and 'n' for no");
+	System.out.println("Do you want to skip your turn? Type 'y' to skip and 'n' to not");
 	String skip = Keyboard.readWord();
 	if (skip.equals("y")) {
 	    skipCounter -= 1;
+	    return;
+	}
+
+	//asks if player wants to shuffle pieces
+	System.out.println("Do you want to shuffle your pieces? Type 'y' to shuffle and 'n' to not");
+	String shuffle = Keyboard.readWord();
+	if(shuffle.equals("y")){
+	    shuffle();
 	    return;
 	}
 

@@ -102,5 +102,6 @@ Lisa :: worked on pointsCalculator() to get points for double letter/triple lett
 --------------------------------------------------------------
 Brooke :: Fixed draw(), Implemented skip functionality, Added ending of game and winner
 Lisa :: Implemented multiplier letters, multiplier words.
+Brandon :: Added shuffling option to player options
 ==============================================================
 
