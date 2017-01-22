@@ -4,7 +4,7 @@ import cs1.Keyboard;
 public class Player extends Woo{
     private int points =0;
     private String name;
-    private ArrayList currentPieces = new ArrayList(); 
+    private ArrayList currentPieces = new ArrayList(); //a player's 7 pieces they can use to form words
     private String direction;
     private String word;
     private int wordLength;
@@ -184,7 +184,6 @@ public class Player extends Woo{
 	    String response = Keyboard.readWord();
 	    if(response.equals("y")){
 		validWord = true;
-		System.out.println(validWord);
 	    }
 	}
 
