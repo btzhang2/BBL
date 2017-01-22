@@ -123,6 +123,17 @@ public class Woo{
 		System.out.println(player1.getName() + " points: " + player1.getPoints());
 	    }
 	    System.out.println("The game is now over.");
+	    System.out.println(player1.getName() + " points: " + player1.getPoints());
+	    System.out.println(player2.getName() + " points: " + player2.getPoints());
+	    if (player1.getPoints() > player2.getPoints()) {
+		System.out.println(player1.getName() + " wins!");
+	    }
+	    else if (player2.getPoints() > player1.getPoints()) {
+		System.out.println(player2.getName() + " wins!");
+	    }
+	    else {
+		System.out.println("There was a tie.");
+	    }
 	}
 	if (playerNumber == 3){
 	    while(skipCounter > 0 && hundredPieces.size() > 0){
@@ -143,6 +154,21 @@ public class Woo{
 		System.out.println(player1.getName() + " points: " + player1.getPoints());
 	    }
 	    System.out.println("The game is now over.");
+	    System.out.println(player1.getName() + " points: " + player1.getPoints());
+	    System.out.println(player2.getName() + " points: " + player2.getPoints());
+	    System.out.println(player3.getName() + " points: " + player3.getPoints());
+	    if (player1.getPoints() > player2.getPoints() && player1.getPoints() > player3.getPoints()) {
+		System.out.println(player1.getName() + " wins!");
+	    }
+	    else if (player2.getPoints() > player1.getPoints() && player2.getPoints() > player3.getPoints()) {
+		System.out.println(player2.getName() + " wins!");
+	    }
+	    else if (player3.getPoints() > player1.getPoints() && player3.getPoints() > player2.getPoints()) {
+		System.out.println(player3.getName() + " wins!");
+	    }
+	    else {
+		System.out.println("There was a tie.");
+	    }
 	}
 	if (playerNumber == 4){
 	    while(skipCounter > 0 && hundredPieces.size() > 0){
@@ -168,6 +194,29 @@ public class Woo{
 		System.out.println(player1.getName() + " points: " + player1.getPoints());
 	    }
 	    System.out.println("The game is now over.");
+	    System.out.println(player1.getName() + " points: " + player1.getPoints());
+	    System.out.println(player2.getName() + " points: " + player2.getPoints());
+	    System.out.println(player3.getName() + " points: " + player3.getPoints());
+	    System.out.println(player4.getName() + " points: " + player4.getPoints());
+	    if (player1.getPoints() > player2.getPoints() && player1.getPoints() > player3.getPoints()
+		&& player1.getPoints() > player4.getPoints()) {
+		System.out.println(player1.getName() + " wins!");
+	    }
+	    else if (player2.getPoints() > player1.getPoints() && player2.getPoints() > player3.getPoints()
+		     && player2.getPoints() > player4.getPoints()) {
+		System.out.println(player2.getName() + " wins!");
+	    }
+	    else if (player3.getPoints() > player1.getPoints() && player3.getPoints() > player2.getPoints()
+		     && player3.getPoints() > player4.getPoints()) {
+		System.out.println(player3.getName() + " wins!");
+	    }
+	    else if (player4.getPoints() > player1.getPoints() && player4.getPoints() > player2.getPoints()
+		     && player4.getPoints() > player3.getPoints()) {
+		System.out.println(player4.getName() + " wins!");
+	    }
+	    else {
+		System.out.println("There was a tie.");
+	    }
 	}
     }
 }

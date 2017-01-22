@@ -65,10 +65,12 @@ public class Player extends Woo{
 	    }
 	}
 	for (int i = currentPieces.size(); i < 7; i++) {
-	    super.scramble();
-	    String s = (String)super.hundredPieces.get(2);
-	    super.hundredPieces.remove(2);
-	    currentPieces.add(i,s);
+	    if (hundredPieces.size() > 0) {
+		super.scramble();
+		String s = (String)super.hundredPieces.get(2);
+		super.hundredPieces.remove(2);
+		currentPieces.add(i,s);
+	    }
 	}
     }
 
