@@ -15,9 +15,8 @@ public class Player extends Woo{
     private int playerNumber;
 
     //constructor; gives each player 7 pieces    
-    public Player(int player){
+    public Player(){
 	firstPieces();
-	playerNumber = player;
     }
 
     //sets the player's name
@@ -177,6 +176,18 @@ public class Player extends Woo{
         wordLength = word.length(); //calculate the length of the word
 	int wordIndex = 0;
         validWord = Dictionary.wordChecker(word); //check if word is valid
+
+	//Other players can input if the word should be input if it was not in dictionary
+	if(!validWord){
+	    System.out.println("The word you input was not in our dictionary " + name);
+	    System.out.println("What do the other players think, is the word valid ('y') or not ('n')");
+	    String response = Keyboard.readWord();
+	    if(response.equals("y")){
+		validWord = true;
+		System.out.println(validWord);
+	    }
+	}
+
 
 	//place the letter of the first word at the center of the board (8,8)
 	if (validWord && letterChecker(word)) {

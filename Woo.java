@@ -76,10 +76,10 @@ public class Woo{
 	    System.out.println("There can only be 2-4 players");
 	    playerNumber = Keyboard.readInt();
 	}
-	Player player1 = new Player(1);
-	Player player2 = new Player(2);
-	Player player3 = new Player(3);
-	Player player4 = new Player(4);
+	Player player1 = new Player();
+	Player player2 = new Player();
+	Player player3 = new Player();
+	Player player4 = new Player();
 	
 	System.out.println("Player number 1 what is your name?");
 	String playerName = Keyboard.readWord();
