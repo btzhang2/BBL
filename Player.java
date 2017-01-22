@@ -532,6 +532,7 @@ public class Player extends Woo{
     public void pointsAdd() {
 	if (validWord) {
 	    points += pointsCalculator(word);
+	    word = "";
 	}
     }
 
