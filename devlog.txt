@@ -10,18 +10,19 @@ Scrabble
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Created a board and allowed users to input letters on the board
-* Dictionary -- word is checked for validity
-* Words now have to be built off existing words
-* Woo no longer uses static variables (since they are evil apparently??)
-* Players and their randomly generated tiles
-* Check the words around the new word for valid words
+* Created a board and allowed users to input letters on the board -- We used an array and Keyboard.java
+* Dictionary, word is checked for validity -- Dictionary and file of valid words were imported
+* Words now have to be built off existing words -- It checks the array for existing letters
+* Players and their randomly generated tiles -- We created instances of each player
+* Board remains the same for all players -- We implemented static variables
+* Check the words around the new word for valid words -- It checks the array for newly created words and validates them
 * Dictionary has some weird words (ypp is a word?) but we'll go with it
-* After five hours of working, Brooke realized that draw() was not working properly because existingsLs didn't reset each time.
+* Modified draw() so it replaces only pieces used -- after five hours of working, Brooke realized that draw() was not working properly because existingsLs didn't reset each time
 * Checks and adding need to be defined and organized
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+None!
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,7 +31,7 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* we changed the variables and methods in Woo.java to static because they don’t change. As Player.java extends Woo.java, we don’t want a board to be created for every single player.
+* We changed the variables and methods in Woo.java to static because they don’t change. As Player.java extends Woo.java, we don’t want a board to be created for every single player.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
