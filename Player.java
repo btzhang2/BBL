@@ -383,14 +383,18 @@ public class Player extends Woo{
     //assigns a numerical value to each letter and returns the sum of the numerical values in the parameter
     public int pointsCalculator(String inputWord) {
 	String tempWord = inputWord;
+	int fixedRow = row;
 	int tempRow = row;
+	int fixedCol = col;
 	int tempCol = col;
 	int points = 0;
 	if (direction.equals("r")){
 	    tempCol-=inputWord.length();
+	    fixedCol-=inputWord.length();
 	}
 	if (direction.equals("u")){
 	    tempRow-=inputWord.length();
+	    fixedRow-=inputWord.length();
 	}
 	while (tempWord.length() > 0) {
 	    String tempChar = tempWord.substring(0,1);
@@ -449,6 +453,13 @@ public class Player extends Woo{
 		tempRow+=1;
 	    }
 	}
+	if (direction.equals("r")){
+	    tempCol-=inputWord.length();
+	}
+	if (direction.equals("u")){
+	    tempRow-=inputWord.length();
+	}
+	points=boardPts1(tempRow, tempCol, fixedRow, fixedCol, points, inputWord);
 	return points;
     }
 
@@ -528,6 +539,116 @@ public class Player extends Woo{
 		    }
 	    }
 	    return oPoints;
+    }
+
+    public int boardPts1(int tempRow, int tempCol, int fixedRow, int fixedCol, int points, String inputWord){
+	if (direction.equals("r")){
+	    if (tempRow == 1 || tempRow == 15){
+		while (tempCol < fixedCol + inputWord.length()){
+		    if (tempCol == 1 || tempCol == 8 || tempCol == 15){
+			return (3 * points);
+		    }
+		    tempCol+=1;
+		}
+	    }
+	    else if (tempRow == 2 || tempRow == 14){
+		while (tempCol < fixedCol + inputWord.length()){
+		    if (tempCol == 2 || tempCol == 14){
+			return (2 * points);
+		    }
+		    tempCol+=1;
+		}
+	    }
+	    else if (tempRow == 3 || tempRow == 13){
+		while (tempCol < fixedCol + inputWord.length()){
+		    if (tempCol == 3 || tempCol == 13){
+			return (2 * points);
+		    }
+		    tempCol+=1;
+		}
+	    }
+	    else if (tempRow == 4 || tempRow == 12){
+		while (tempCol < fixedCol + inputWord.length()){
+		    if (tempCol == 4 || tempCol == 12){
+			return (2 * points);
+		    }
+		    tempCol+=1;
+		}
+	    }
+	    else if (tempRow == 5 || tempRow == 11){
+		while (tempCol < fixedCol + inputWord.length()){
+		    if (tempCol == 5 || tempCol == 11){
+			return (2 * points);
+		    }
+		    tempCol+=1;
+		}
+	    }
+	    else if (tempRow == 8){
+		while (tempCol < fixedCol + inputWord.length()){
+		    if (tempCol == 1 || tempCol == 15){
+			return (3 * points);
+		    }
+		    else if (tempCol == 8){
+			return (2 * points);
+		    }
+		    tempCol+=1;
+		}
+	    }
+	}
+	if (direction.equals("u")){
+	    if (tempCol == 1 || tempCol == 15){
+		while (tempRow < fixedRow + inputWord.length()){
+		    if (tempRow == 1 || tempRow == 8 || tempRow == 15){
+			return (3 * points);
+		    }
+		    tempRow+=1;
+		}
+	    }
+	    else if (tempCol == 2 || tempCol == 14){
+		while (tempRow < fixedRow + inputWord.length()){
+		    if (tempRow == 2 || tempRow == 14){
+			return (2 * points);
+		    }
+		    tempRow+=1;
+		}
+	    }
+	    else if (tempCol == 3 || tempCol == 13){
+		while (tempRow < fixedRow + inputWord.length()){
+		    if (tempRow == 3 || tempRow == 13){
+			return (2 * points);
+		    }
+		    tempRow+=1;
+		}
+	    }
+	    else if (tempCol == 4 || tempCol == 12){
+		while (tempRow < fixedRow + inputWord.length()){
+		    if (tempRow == 4 || tempRow == 12){
+			return (2 * points);
+		    }
+		    tempRow+=1;
+		}
+	    }
+	    else if (tempCol == 5 || tempCol == 11){
+		while (tempRow < fixedRow + inputWord.length()){
+		    if (tempRow == 5 || tempRow == 11){
+			return (2 * points);
+		    }
+		    tempRow+=1;
+		}
+	    }
+	    else if (tempCol == 8){
+		while (tempRow < fixedRow + inputWord.length()){
+		    if (tempRow == 1 || tempRow == 15){
+			return (3 * points);
+		    }
+		    else if (tempRow == 8){
+			return (2 * points);
+		    }
+		    tempRow+=1;
+		}
+	    }
+	}
+	return points;
     }
 
     //adds points to player
