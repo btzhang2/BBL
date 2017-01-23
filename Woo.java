@@ -113,6 +113,64 @@ public class Woo{
 	printBoard();
 	System.out.println(player1.getName() + " points: " + player1.getPoints());
 
+	if (skipCounter == (playerNumber-1)) {
+	    System.out.println(player2.getName() + " moves");
+	    player2.firstWord();
+	    player2.pointsAdd();
+	    printBoard();
+	    System.out.println(player2.getName() + " points: " + player2.getPoints());
+	    if (playerNumber == 3) {
+		System.out.println(player3.getName() + " moves");
+		player3.firstWord();
+		player3.pointsAdd();
+		printBoard();
+		System.out.println(player3.getName() + " points: " + player3.getPoints());
+	    }
+	    if (playerNumber == 4) {
+		System.out.println(player4.getName() + " moves");
+		player4.firstWord();
+		player4.pointsAdd();
+		printBoard();
+		System.out.println(player4.getName() + " points: " + player4.getPoints());
+	    }
+	    System.out.println(player1.getName() + " moves");
+	    player1.input();
+	    player1.pointsAdd();
+	    printBoard();
+	    System.out.println(player1.getName() + " points: " + player1.getPoints());
+	}
+	if (skipCounter == (playerNumber-2) && skipCounter > 0) {
+	    System.out.println(player3.getName() + " moves");
+	    player3.firstWord();
+	    player3.pointsAdd();
+	    printBoard();
+	    System.out.println(player3.getName() + " points: " + player3.getPoints());
+	    if (playerNumber == 4) {
+		System.out.println(player4.getName() + " moves");
+		player4.firstWord();
+		player4.pointsAdd();
+		printBoard();
+		System.out.println(player4.getName() + " points: " + player4.getPoints());
+	    }
+	    System.out.println(player1.getName() + " moves");
+	    player1.input();
+	    player1.pointsAdd();
+	    printBoard();
+	    System.out.println(player1.getName() + " points: " + player1.getPoints());
+	}
+	if (skipCounter == (playerNumber-3) && skipCounter > 0) {
+	    System.out.println(player4.getName() + " moves");
+	    player4.firstWord();
+	    player4.pointsAdd();
+	    printBoard();
+	    System.out.println(player4.getName() + " points: " + player4.getPoints());
+	    System.out.println(player1.getName() + " moves");
+	    player1.input();
+	    player1.pointsAdd();
+	    printBoard();
+	    System.out.println(player1.getName() + " points: " + player1.getPoints());
+	}
+	
 	//if there are two players, play until both have skipped or the pieces have run out
 	if (playerNumber == 2){
 	    while(skipCounter > 0 && hundredPieces.size() > 0){
